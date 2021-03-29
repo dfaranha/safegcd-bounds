@@ -233,7 +233,7 @@ Definition state0 : State := ZMap.add 1%Z set0 empty.
 Lemma example_0x1dff_30 : ZMap.Empty (N.iter 30 (processDivstep 0x1dff) state0).
 Proof.
 apply ZMap.is_empty_2.
-Time vm_compute.
+Time native_compute.
 auto.
 Qed.
 
@@ -241,7 +241,7 @@ Lemma example_0x1e00_30 : ~ZMap.Empty (N.iter 30 (processDivstep 0x1e00) state0)
 Proof.
 intros H.
 apply ZMap.is_empty_1 in H.
-Time vm_compute in H.
+Time native_compute in H.
 discriminate.
 Qed.
 
@@ -249,6 +249,6 @@ Lemma example_0x1dff_29 : ~ZMap.Empty (N.iter 29 (processDivstep 0x1dff) state0)
 Proof.
 intros H.
 apply ZMap.is_empty_1 in H.
-Time vm_compute in H.
+Time native_compute in H.
 discriminate.
 Qed.
