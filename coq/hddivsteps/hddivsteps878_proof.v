@@ -3,7 +3,7 @@ Require Import hddivsteps878.
 Require Import hddivsteps_def.
 Require Import hddivsteps_theory.
 
-Theorem hddivsteps878 : forall f g,
+Theorem hddivsteps878_gcd : forall f g,
   Z.Odd f ->
   (f <= 0x1a0111ea397fe69a4b1ba7b6434bacd764774b84f38512bf6730d2a0f6b0f6241eabfffeb153ffffb9feffffffffaaab)%Z ->
   (0 <= g <= f)%Z -> 
@@ -15,8 +15,8 @@ eapply processDivstep_gcd; try assumption; try apply HM.
 apply example878.
 Qed.
 
-Check hddivsteps878.
-Print Assumptions hddivsteps878.
+Check hddivsteps878_gcd.
+Print Assumptions hddivsteps878_gcd.
 
 Theorem hddivsteps878 : forall f g,
   Z.Odd f ->
@@ -32,10 +32,10 @@ eapply processDivstep_inverse; try assumption; try apply HM.
 apply example878.
 Qed.
 
-Check hddivsteps878.
-Print Assumptions hddivsteps878.
+Check hddivsteps878_inverse.
+Print Assumptions hddivsteps878_inverse.
 
-Theorem hddivsteps878 : forall f g,
+Theorem hddivsteps878_prime_inverse : forall f g,
   Z.Odd f ->
   Znumtheory.prime f ->
   (g < f <= 0x1a0111ea397fe69a4b1ba7b6434bacd764774b84f38512bf6730d2a0f6b0f6241eabfffeb153ffffb9feffffffffaaab)%Z ->
@@ -49,5 +49,5 @@ eapply processDivstep_prime_inverse; try assumption; try apply HM.
 apply example878.
 Qed.
 
-Check hddivsteps878.
-Print Assumptions hddivsteps878.
+Check hddivsteps878_prime_inverse.
+Print Assumptions hddivsteps878_prime_inverse.
